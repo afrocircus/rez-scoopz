@@ -1,6 +1,6 @@
 name = "scoopz"
 version = "2020.11.26.0"
-requires = ["python-2.7+,<4", "bleeding_rez-2.29+"]
+requires = ["python-3", "rez-2.7+"]
 
 # Each version of Scoop of heavily coupled with whatever its
 # repository of available packages look like at the time. It
@@ -9,11 +9,11 @@ requires = ["python-2.7+,<4", "bleeding_rez-2.29+"]
 _buckets = {
     "main": (
         "https://github.com/ScoopInstaller/Main/archive/"
-        "f3a0295e535842bc7bc81dd4d8bd09f5e7e5d0d8.zip"
+        "75e9929147b11d37f20ac80e5a346bdb83003ff9.zip"
     ),
     "versions": (
         "https://github.com/ScoopInstaller/Versions/archive/"
-        "736c36536e22198029b24c16c073fe2151b85cbe.zip"
+        "1611dcdc9cc864a3a966858542eeaf7b9d554158.zip"
     )
 }
 
@@ -22,9 +22,7 @@ build_command += " --overwrite"
 build_command += " --bucket %s" % _buckets["main"]
 build_command += " --bucket %s" % _buckets["versions"]
 
-variants = [
-    ["platform-windows", "arch-AMD64"]
-]
+variants = [['platform-windows', 'arch-AMD64']]
 
 
 def commands():
